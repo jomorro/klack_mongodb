@@ -65,7 +65,6 @@ app.get("/messages", (request, response) => {
   let otherUsers;
 
   User.find()
-    .then(users => users.filter(user => user.username != request.query.for))
     .then(users => otherUsers = users.map(function (user) {
       return {
         name: user.username,
